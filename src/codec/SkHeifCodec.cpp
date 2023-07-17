@@ -390,7 +390,6 @@ SkCodec::Result SkHeifCodec::onGetPixels(const SkImageInfo& dstInfo,
     }
 
     bool success;
-    fFrameHolder.appendNewFrame();
     if (fUseAnimation) {
         success = fHeifDecoder->decodeSequence(options.fFrameIndex, &fFrameInfo);
         fFrameHolder.editFrameAt(options.fFrameIndex)->setDuration(
